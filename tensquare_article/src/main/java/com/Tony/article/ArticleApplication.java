@@ -1,5 +1,7 @@
 package com.Tony.article;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //spring启动类
 @SpringBootApplication
+//配置mapper包扫描
+@MapperScan("com.Tony.article.dao")
 public class ArticleApplication {
 
     public static void main(String[] args){
