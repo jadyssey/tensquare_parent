@@ -15,7 +15,7 @@ mybatis-plus:
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.Tony.article.pojo
   global-config:
-    id-type: 1  #0:数据库ID自增  ； 1:用户输入id
+    id-type: 1  #0:数据库ID自增  ； 1:用户输入id  #因为使用雪花算法
     db-column-underline: false
     refresh-mapper: true
     configuration:
