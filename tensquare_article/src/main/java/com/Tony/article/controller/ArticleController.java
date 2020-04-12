@@ -22,6 +22,23 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+//    DELETE/article/{articleId}    根据ID删除文章
+    @RequestMapping(value = "{articleId}",method = RequestMethod.DELETE)
+    public Result deleteById(@PathVariable String articleId){
+        articleService.deleteById(articleId);
+        return new Result(true,StatusCode.OK,"删除成功");
+    }
+
+
+//    PUT/article/{articleId}    修改文章
+    @RequestMapping(value = "{articleId}",method = RequestMethod.PUT)
+    public Result UpdateById(@PathVariable String articleId,@RequestBody Article article){ //接收URL的Id和Json数据
+        article.setId(articleId);//合并传入的两组数据
+        articleService.updateById(article);
+        return new Result(true,StatusCode.OK,"修改文章成功");
+    }
+
+
     // GET请求/article 查询文章全部列表
     @RequestMapping(method = RequestMethod.GET)
     public Result findAll(){

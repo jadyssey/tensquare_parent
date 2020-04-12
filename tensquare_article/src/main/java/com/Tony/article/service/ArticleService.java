@@ -2,6 +2,7 @@ package com.Tony.article.service;
 
 import com.Tony.article.dao.ArticleDao;
 import com.Tony.article.pojo.Article;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
@@ -41,12 +42,27 @@ public class ArticleService {
         String id = idWorker.nextId()+"";//因为idWorker生成的是long型的，而articleId是String型，所以要转换成String型
         article.setId(id);
 
-        //初始化部分数据；不设置的话为Null，无法增加
+        //初始化部分数据，否则Null无法增加；最好在建表语句中设置DEFAULT 0 ，建表语句中该字段默认为0则无需初始化;
         article.setVisits(0);//浏览量
         article.setComment(0);//评论数
         article.setThumbup(0);//点赞数
 
         //新增
         articleDao.insert(article);
+    }
+
+    //根据Id修改文章
+     public void updateById(Article article) {
+        //第一种方法：根据主键ID修改
+        articleDao.updateById(article);
+
+        //根据任意条件修改: 此处根据id
+         EntityWrapper<Article> wrapper = new EntityWrapper<>();//创建条件对象，因为要调用里面的方法
+         wrapper.eq("id",article.getId());//设置根据article中的id来更新表中的id字段
+         articleDao.update(article,wrapper);
+    }
+//根据Id删除文章
+    public void deleteById(String articleId) {
+        articleDao.deleteById(articleId);
     }
 }
