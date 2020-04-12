@@ -3,11 +3,14 @@ package com.Tony.article.service;
 import com.Tony.article.dao.ArticleDao;
 import com.Tony.article.pojo.Article;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author AntonTony
@@ -64,5 +67,32 @@ public class ArticleService {
 //根据Id删除文章
     public void deleteById(String articleId) {
         articleDao.deleteById(articleId);
+    }
+
+    //根据条件分页查询
+    public Page<Article> findByPage(Map<String, Object> map, Integer page, Integer size) {
+        //设置条件查询
+        EntityWrapper<Article> wrapper =new EntityWrapper<>();
+        //遍历map拿到key
+        Set<String> keySet= map.keySet();
+        for (String key: keySet){
+            //此if与下方语句效果相同
+            if(map.get(key)!= null){
+                wrapper.eq(key,map.get(key));
+            }
+            //第一个参数是Boolean型，判断是否把后面的条件加入到查询条件中，实现动态SQL
+            wrapper.eq(null != map.get(key),key,map.get(key));
+        }
+
+        //设置分页参数,使用 Mybatis Plus 提供的Page对象
+        Page<Article> pageData = new Page<>(page,size);
+
+        //执行查询,第一个是分页参数，第二个是查询条件:得到结果集
+         List<Article> list = articleDao.selectPage(pageData,wrapper);
+
+         //将结果集放入pageData
+         pageData.setRecords(list);
+
+        return pageData;
     }
 }

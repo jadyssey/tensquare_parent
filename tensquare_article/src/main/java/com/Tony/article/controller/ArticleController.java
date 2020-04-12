@@ -26,12 +26,12 @@ public class ArticleController {
     private ArticleService articleService;
 
 //    POST /article/search/{page}/{size}    文章分页
-    @RequestMapping(value = "/search",method = RequestMethod.POST)
-    public Result findByPage(@PathVariable Integer page,
-                             @PathVariable Integer size,
+    @RequestMapping(value = "/search/{page}/{size}",method = RequestMethod.POST)
+    public Result findByPage(@PathVariable Integer page,//当前页数
+                             @PathVariable Integer size,//每页显示的结果集个数
                              @RequestBody Map<String,Object> map){ //使用集合的方式遍历,Key存字段名字，value存数据
 
-        //根据条件分页查询
+        //根据条件分页查询,使用 Mybatis Plus 提供的Page对象
         Page<Article> pageData = articleService.findByPage(map,page,size);
         //封装分页返回对象
         PageResult<Article> pageResult = new PageResult<>(
