@@ -2,6 +2,8 @@ package com.Tony.article.controller;
 
 import com.Tony.article.pojo.Article;
 import com.Tony.article.service.ArticleService;
+import com.baomidou.mybatisplus.plugins.Page;
+import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
 import jdk.net.SocketFlow;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author AntonTony
@@ -21,6 +24,24 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+//    POST /article/search/{page}/{size}    文章分页
+    @RequestMapping(value = "/search",method = RequestMethod.POST)
+    public Result findByPage(@PathVariable Integer page,
+                             @PathVariable Integer size,
+                             @RequestBody Map<String,Object> map){ //使用集合的方式遍历,Key存字段名字，value存数据
+
+        //根据条件分页查询
+        Page<Article> pageData = articleService.findByPage(map,page,size);
+        //封装分页返回对象
+        PageResult<Article> pageResult = new PageResult<>(
+                pageData.getTotal(),pageData.getRecords()  //总记录数和当前页的数据结果集
+        );
+
+        return new Result(true,StatusCode.OK,"分页查询成功",pageResult);
+    }
+
+
 
 //    DELETE/article/{articleId}    根据ID删除文章
     @RequestMapping(value = "{articleId}",method = RequestMethod.DELETE)
