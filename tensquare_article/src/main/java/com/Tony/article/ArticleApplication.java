@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import util.IdWorker;
 
 /**
  * @author AntonTony
@@ -20,6 +22,10 @@ public class ArticleApplication {
     public static void main(String[] args){
         SpringApplication.run(ArticleApplication.class,args);
     }
-
+    //创建IdWorker实例用于生成唯一ID
+    @Bean
+    public IdWorker createIdWorker(){
+        return new IdWorker(1,1);//第一个是机器号，第二个是序列号
+    }
 }
 

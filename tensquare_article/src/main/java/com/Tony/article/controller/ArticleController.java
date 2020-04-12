@@ -6,10 +6,7 @@ import entity.Result;
 import entity.StatusCode;
 import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,4 +34,12 @@ public class ArticleController {
         Article article = articleService.findById(articleId);
         return new Result(true,StatusCode.OK,"根据ID查询成功",article);
     }
+
+    // POST/article  增加文章
+    @RequestMapping(method = RequestMethod.POST)
+    public Result save(@RequestBody Article article){ //@RequestBody将json格式数据转化为对象
+        articleService.addArticle(article);
+        return new Result(true,StatusCode.OK,"添加文章成功");
+    }
+
 }
