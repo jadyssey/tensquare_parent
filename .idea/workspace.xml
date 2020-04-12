@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bc491c7-f19b-4044-96f4-0f278fa7d22e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tensquare_article/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/ArticleApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tensquare_article/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tensquare_common/src/main/java/util/IdWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5bc491c7-f19b-4044-96f4-0f278fa7d22e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/tensquare_common/target/" />
@@ -38,8 +29,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/ArticleApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="304">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,9 +124,9 @@
     <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=$MAVEN_HOME -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
-    <option name="y" value="32" />
-    <option name="width" value="1104" />
+    <option name="x" value="28" />
+    <option name="y" value="33" />
+    <option name="width" value="1633" />
     <option name="height" value="1035" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -202,7 +198,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586677756824" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586687610404" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -227,6 +223,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="tensquare_article" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Tony.article.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Tony.article.ArticleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ArticleApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -237,12 +253,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586622478059</updated>
-      <workItem from="1586622479928" duration="8018000" />
+      <workItem from="1586622479928" duration="9533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8018000" />
+    <option name="totallyTimeSpent" value="9533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,7 +270,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="26" width="883" height="828" extended-state="0" />
+    <frame x="23" y="27" width="973" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -263,7 +279,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" sideWeight="0.50071734" side_tool="true" weight="0.24962743" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46404108" visible="true" weight="0.31878787" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46404108" visible="true" weight="0.2874317" />
       <window_info id="Structure" order="1" sideWeight="0.5359589" side_tool="true" weight="0.23475823" />
       <window_info anchor="bottom" id="Spring" weight="0.35344827" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32902297" />
@@ -279,7 +295,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.21715818" />
-      <window_info anchor="right" id="Maven" visible="true" weight="0.16848485" />
+      <window_info anchor="right" id="Maven" weight="0.16848485" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Database" />
@@ -384,8 +400,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/ArticleApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="304">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
