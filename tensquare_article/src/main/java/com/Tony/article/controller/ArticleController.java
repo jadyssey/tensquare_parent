@@ -20,18 +20,19 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/article")
+@CrossOrigin //使当前类中的方法支持跨域
 public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
 
     //测试统一异常处理,造一个异常
-/*    @RequestMapping(value = "/exception",method = RequestMethod.GET)
+   @RequestMapping(value = "/exception",method = RequestMethod.GET)
     public Result testError(){
         int a = 1/0;
         return null;
     }
-    @RequestMapping(value = "/exception",method = RequestMethod.GET)
+/*     @RequestMapping(value = "/exception",method = RequestMethod.GET)
     public Result exception() throws Exception{
         throw new Exception("测试统一异常处理");
     }

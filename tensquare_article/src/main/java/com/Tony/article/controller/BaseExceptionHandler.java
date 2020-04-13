@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @ControllerAdvice //异常类声明
 public class BaseExceptionHandler {
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = Exception.class) //捕捉Exception下的子类异常
     @ResponseBody //处理结果转成json数据返回
     public Result error(Exception e){
         System.out.println("BaseException处理异常运行了");
