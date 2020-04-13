@@ -6,10 +6,7 @@ import com.Tony.article.service.CommentService;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,14 @@ public class CommentController {
 
     @Autowired
     private CommentService commentService;
+
+    //Post /comment   新增评论
+    @RequestMapping(method = RequestMethod.POST)
+    public Result save(@RequestBody Comment comment){
+        commentService.save(comment);
+        return new Result(true,StatusCode.OK,"新增评论成功");
+
+    }
 
     // GET /comment/{commentId}  根据评论Id查询评论数据
     @RequestMapping(value = "{commentId}",method = RequestMethod.GET)
