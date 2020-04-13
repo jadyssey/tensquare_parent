@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 1.0
  * @GitHub https://github.com/AntonTony
  */
+
 @ControllerAdvice //异常类声明
 public class BaseExceptionHandler {
     @ExceptionHandler(value = Exception.class) //捕捉Exception下的子类异常
