@@ -25,6 +25,18 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    //测试统一异常处理,造一个异常
+/*    @RequestMapping(value = "/exception",method = RequestMethod.GET)
+    public Result testError(){
+        int a = 1/0;
+        return null;
+    }
+    @RequestMapping(value = "/exception",method = RequestMethod.GET)
+    public Result exception() throws Exception{
+        throw new Exception("测试统一异常处理");
+    }
+*/
+
 //    POST /article/search/{page}/{size}    文章分页
     @RequestMapping(value = "/search/{page}/{size}",method = RequestMethod.POST)
     public Result findByPage(@PathVariable Integer page,//当前页数
@@ -40,8 +52,6 @@ public class ArticleController {
 
         return new Result(true,StatusCode.OK,"分页查询成功",pageResult);
     }
-
-
 
 //    DELETE/article/{articleId}    根据ID删除文章
     @RequestMapping(value = "{articleId}",method = RequestMethod.DELETE)

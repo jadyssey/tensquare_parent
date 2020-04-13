@@ -77,9 +77,7 @@ public class ArticleService {
         Set<String> keySet= map.keySet();
         for (String key: keySet){
             //此if与下方语句效果相同
-            if(map.get(key)!= null){
-                wrapper.eq(key,map.get(key));
-            }
+//            if(map.get(key)!= null){   wrapper.eq(key,map.get(key));   }
             //第一个参数是Boolean型，判断是否把后面的条件加入到查询条件中，实现动态SQL
             wrapper.eq(null != map.get(key),key,map.get(key));
         }

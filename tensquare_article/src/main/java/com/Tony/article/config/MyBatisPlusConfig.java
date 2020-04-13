@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyBatisPlusConfig {
 
-    //配置分页查询插件
+    //配置分页查询插件：分页拦截器
     @Bean
     public PaginationInterceptor createPaginationInterceptor(){
         return new PaginationInterceptor();
