@@ -22,6 +22,23 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    //DELETE /comment/{commentId} 根据Id删除评论
+    @RequestMapping(value = "{commentId}",method = RequestMethod.DELETE)
+    public Result deleteById(@PathVariable String commentId){
+        commentService.deleteById(commentId);
+        return new Result(true,StatusCode.OK,"删除评论成功");
+    }
+
+    //PUT /comment/{commentId}  修改评论
+    @RequestMapping(value = "{commentId}",method = RequestMethod.PUT)
+    public Result updateById(@PathVariable String commentId,
+                             @RequestBody Comment comment){
+        comment.set_id(commentId);
+        commentService.updateById(comment);
+        return new Result(true,StatusCode.OK,"修改评论成功");
+
+    }
+
     //Post /comment   新增评论
     @RequestMapping(method = RequestMethod.POST)
     public Result save(@RequestBody Comment comment){

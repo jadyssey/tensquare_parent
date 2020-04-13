@@ -44,11 +44,21 @@ public class CommentService {
     //新增评论
     public void save(Comment comment) {
         //分布式Id生成器
+        //_id不要动，新建字段c_id用于存放idWorker的唯一id
         String id = idWorker.nextId()+"";
-        comment.set_id(id);
+        // comment.set_id(id);
         //初始化点赞数
         comment.setThumbup(0);
         comment.setPublishdate(new Date());
-        commentRepository.save(comment);//到这一步comment一定要拥有完整的所有字段
+        commentRepository.save(comment);//保存所有字段的完整数据
+    }
+
+    public void updateById(Comment comment) {
+//        MongoRepository中的save方法：如果主键存在，则执行修改，不存在则新增
+        commentRepository.save(comment);
+    }
+
+    public void deleteById(String commentId) {
+        commentRepository.deleteById(commentId);
     }
 }
