@@ -15,9 +15,6 @@ public class Comment implements Serializable {
     private String parentid;
     private Date publishdate;
     private Integer thumbup;
-
-​
-
     @Override
     public String toString() {
         return "Comment{" +

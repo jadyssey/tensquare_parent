@@ -8,5 +8,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @version 1.0
  * @GitHub https://github.com/AntonTony
  */
-public interface CommentRepository extends MongoRepository<Comment,String> {
+public interface CommentRepository extends MongoRepository<Comment,String> { //id类型是String
+
 }

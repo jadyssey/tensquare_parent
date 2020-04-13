@@ -73,13 +73,13 @@ public class ArticleController {
     // GET请求/article 查询文章全部列表
     @RequestMapping(method = RequestMethod.GET)
     public Result findAll(){
-        List<Article> list = articleService.findAll();
+        List<Article> list = articleService.findAll(); //多个数据用list接收
         return new Result(true, StatusCode.OK,"查询成功",list);
     }
     // GET/article/{articleId}    根据ID查询文章
     @RequestMapping(value = "/{articleId}",method = RequestMethod.GET)
     public Result findById(@PathVariable String articleId){ //@PathVariable接收网页传参
-        Article article = articleService.findById(articleId);
+        Article article = articleService.findById(articleId); //单个数据用Article接收
         return new Result(true,StatusCode.OK,"根据ID查询成功",article);
     }
 
