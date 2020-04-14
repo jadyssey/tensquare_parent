@@ -64,7 +64,21 @@ public class CommentService {
 
     public List<Comment> findByArticleId(String articleId) {
         //调用持久层根据文章Id查询即可
-        List<Comment> list = commentRepository.findByArticleid(articleId);//返回多个数据
+        List<Comment> list = commentRepository.findByArticleid(articleId);//返回多个数据用list
         return list;
+    }
+
+    public void thumbupByCommentId(String commentId) {
+
+//        根据评论集合评论id查询评论功能
+        Comment comment = commentRepository.findById(commentId).get();  //类似i++不保证线程安全，可能导致脏读
+//        该评论的点赞数据+1
+        comment.setThumbup(comment.getThumbup()+1);
+//        保存
+        commentRepository.save(comment);
+
+
+
+
     }
 }

@@ -22,6 +22,14 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    //PUT /comment/thumbup/{commentId}  根据评论Id点赞
+    @RequestMapping(value = "/thumbup/{commentId}",method = RequestMethod.POST)
+    public Result thumbupByCommentId(@PathVariable String commentId){
+        commentService.thumbupByCommentId(commentId);
+        return new Result(true,StatusCode.OK,"点赞成功");
+    }
+
+
     // GET /comment/article/{articleId}  根据文章ID查询文章
     @RequestMapping(value = "/article/{articleId}",method = RequestMethod.GET)
     public Result findByArticleId(@PathVariable String articleId){
