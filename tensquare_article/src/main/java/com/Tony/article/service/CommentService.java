@@ -3,6 +3,10 @@ package com.Tony.article.service;
 import com.Tony.article.pojo.Comment;
 import com.Tony.article.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
@@ -22,6 +26,9 @@ public class CommentService {
     private CommentRepository commentRepository;
     @Autowired
     private IdWorker idWorker;
+    @Autowired
+    private MongoTemplate mongoTemplate; //注入模板
+
     //查询所有id
     public List<Comment> findAll(){
         List<Comment> list = commentRepository.findAll();
@@ -70,13 +77,17 @@ public class CommentService {
 
     public void thumbupByCommentId(String commentId) {
 
-//        根据评论集合评论id查询评论功能
-        Comment comment = commentRepository.findById(commentId).get();  //类似i++不保证线程安全，可能导致脏读
-//        该评论的点赞数据+1
-        comment.setThumbup(comment.getThumbup()+1);
-//        保存
-        commentRepository.save(comment);
 
+//      点赞功能实现：    类似i++不保证线程安全，可能导致脏读
+/*      Comment comment = commentRepository.findById(commentId).get(); //根据评论集合评论id查询评论功能
+        comment.setThumbup(comment.getThumbup()+1);// 该评论的点赞数据+1
+        commentRepository.save(comment); // 保存   */
+//      点赞功能优化：根据评论Id点赞,使用MongoDB的列增长功能
+        Query query = new Query();// 封装修改的条件
+            query.addCriteria(Criteria.where("_id").is(commentId));
+        Update update = new Update();// 封装修改的数值
+            update.inc("thumbup",1);
+        mongoTemplate.updateFirst(query,update,"comment");
 
 
 
