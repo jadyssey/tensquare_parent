@@ -6,6 +6,7 @@ import com.Tony.article.service.CommentService;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,12 +23,31 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    //PUT /comment/thumbup/{commentId}  根据评论Id点赞
+    @Autowired
+    private RedisTemplate redisTemplate;//注入Redis
+
+    //PUT /comment/thumbup/{commentId}  根据用户id和评论id判断是否执行点赞功能
+    @RequestMapping(value = "/thumbup/{commentId}",method = RequestMethod.PUT)
+    public Result thumbupByCommentId(@PathVariable String commentId){
+        String userId = "123";  //获取用户Id
+        Object flag = redisTemplate.opsForValue().get("thumbup_" + userId + "_" + commentId);//执行点赞方法前先查询
+        if(flag == null || flag.equals(0)){  //
+            commentService.thumbupByCommentId(commentId);
+            redisTemplate.opsForValue().set("thumbup_" + userId + "_" + commentId,1);//点过攒将该数据拼接保存在redis内，value为1
+            return new Result(true,StatusCode.OK,"点赞成功");
+        }else{
+            commentService.thumbupByCommentIdD(commentId); //取消点赞
+            redisTemplate.opsForValue().set("thumbup_" + userId + "_" + commentId,0);
+            return new Result(true,StatusCode.OK,"取消点赞成功");
+        }
+
+    }
+/*    //PUT /comment/thumbup/{commentId}  根据评论Id点赞  ：该方法会导致单一用户无线点赞
     @RequestMapping(value = "/thumbup/{commentId}",method = RequestMethod.POST)
     public Result thumbupByCommentId(@PathVariable String commentId){
         commentService.thumbupByCommentId(commentId);
         return new Result(true,StatusCode.OK,"点赞成功");
-    }
+    }*/
 
 
     // GET /comment/article/{articleId}  根据文章ID查询文章

@@ -77,7 +77,6 @@ public class CommentService {
 
     public void thumbupByCommentId(String commentId) {
 
-
 //      点赞功能实现：    类似i++不保证线程安全，可能导致脏读
 /*      Comment comment = commentRepository.findById(commentId).get(); //根据评论集合评论id查询评论功能
         comment.setThumbup(comment.getThumbup()+1);// 该评论的点赞数据+1
@@ -89,7 +88,15 @@ public class CommentService {
             update.inc("thumbup",1);
         mongoTemplate.updateFirst(query,update,"comment");
 
+    }
+    //取消点赞方法
+    public void thumbupByCommentIdD(String commentId) { //用户如果点过赞再次点击则取消点赞
 
+        Query query = new Query();// 封装修改的条件
+        query.addCriteria(Criteria.where("_id").is(commentId));
+        Update update = new Update();// 封装修改的数值
+        update.inc("thumbup",-1);
+        mongoTemplate.updateFirst(query,update,"comment");
 
     }
 }
