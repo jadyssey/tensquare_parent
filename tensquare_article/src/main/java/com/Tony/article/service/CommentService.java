@@ -61,4 +61,10 @@ public class CommentService {
     public void deleteById(String commentId) {
         commentRepository.deleteById(commentId);
     }
+
+    public List<Comment> findByArticleId(String articleId) {
+        //调用持久层根据文章Id查询即可
+        List<Comment> list = commentRepository.findByArticleid(articleId);//返回多个数据
+        return list;
+    }
 }

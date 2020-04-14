@@ -22,6 +22,14 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    // GET /comment/article/{articleId}  根据文章ID查询文章
+    @RequestMapping(value = "/article/{articleId}",method = RequestMethod.GET)
+    public Result findByArticleId(@PathVariable String articleId){
+        List<Comment> list = commentService.findByArticleId(articleId);  //返回多个值用list
+        return new Result(true,StatusCode.OK,"根据文章id查询评论成功",list);
+
+    }
+
     //DELETE /comment/{commentId} 根据Id删除评论
     @RequestMapping(value = "{commentId}",method = RequestMethod.DELETE)
     public Result deleteById(@PathVariable String commentId){
