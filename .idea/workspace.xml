@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bc491c7-f19b-4044-96f4-0f278fa7d22e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/chatroom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/js/jquery-1.12.3.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/WebIMConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/WebIMConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/chatroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/static/chatroom.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/resources/static/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="457" column="10" lean-forward="true" selection-start-line="444" selection-start-column="8" selection-end-line="457" selection-end-column="10" />
+            <state relative-caret-position="449">
+              <caret line="502" column="10" lean-forward="true" selection-start-line="465" selection-start-column="8" selection-end-line="502" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -57,10 +54,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/resources/static/chatroom.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="158" column="40" lean-forward="true" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
+            <state relative-caret-position="-1159">
+              <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Spring-websocket/src/main/webapp/WEB-INF/content/chatroom.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="131" column="37" lean-forward="true" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+              <folding>
+                <element signature="e#48#54#1" expanded="true" />
+                <element signature="e#50#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,8 +173,8 @@
     <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=$MAVEN_HOME -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="577" />
-    <option name="y" value="22" />
+    <option name="x" value="521" />
+    <option name="y" value="31" />
     <option name="width" value="1269" />
     <option name="height" value="1043" />
   </component>
@@ -218,7 +228,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -228,6 +238,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tensquare_parent" type="b2602c69:ProjectViewProjectNode" />
@@ -305,7 +316,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586929177838" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586931797385" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Spring-websocket" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -465,12 +476,12 @@
       <option name="presentableId" value="Default" />
       <updated>1586622478059</updated>
       <workItem from="1586622479928" duration="34132000" />
-      <workItem from="1586756733954" duration="51310000" />
+      <workItem from="1586756733954" duration="53964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85442000" />
+    <option name="totallyTimeSpent" value="88096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,7 +493,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="462" y="18" width="1015" height="834" extended-state="0" />
+    <frame x="417" y="25" width="1015" height="834" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46455225" visible="true" weight="0.31661442" />
@@ -967,15 +978,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/resources/static/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="457" column="10" lean-forward="true" selection-start-line="444" selection-start-column="8" selection-end-line="457" selection-end-column="10" />
+        <state relative-caret-position="449">
+          <caret line="502" column="10" lean-forward="true" selection-start-line="465" selection-start-column="8" selection-end-line="502" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spring-websocket/src/main/webapp/WEB-INF/content/chatroom.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="131" column="37" lean-forward="true" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+          <folding>
+            <element signature="e#48#54#1" expanded="true" />
+            <element signature="e#50#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_user/src/main/resources/static/chatroom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="158" column="40" lean-forward="true" selection-start-line="158" selection-start-column="40" selection-end-line="158" selection-end-column="40" />
+        <state relative-caret-position="-1159">
+          <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
