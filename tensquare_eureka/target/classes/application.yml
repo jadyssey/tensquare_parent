@@ -3,10 +3,9 @@ server:
 spring:
   application:
     name: tensquare-eureka
-
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false  #是否将自己注册到Eureka中
+    fetch-registry: false  #是否从Eureka中获取信息
     service-url:
-      defaultZone: http://127.0.0.1:/${server.port}/eureka/
+      defaultZone: http://127.0.0.1:${server.port}/eureka/

@@ -2,7 +2,7 @@ server:
   port: 9004 #服务访问端口号
 spring:
   application:
-    name: tensquare_article #指定服务名
+    name: tensquare-article #指定服务名
   datasource: #数据库连接四大属性
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.200.128:3306/tensquare_article?characterEncoding=utf-8
@@ -14,8 +14,6 @@ spring:
       database: commentdb
   redis: #默认端口号不用配置
     host: 192.168.200.128
-
-
 
 # Mybatis-Plus 配置
 mybatis-plus:
@@ -32,10 +30,12 @@ mybatis-plus:
       lazyLoadingEnabled: true #延时加载的开关
       multipleResultSetsEnabled: true #开启延时加载，否则按需加载属性
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
-
 eureka:
-                         client:
-                           service-url:
-                             defaultZone: http://127.0.0.1:6868/eureka/
-                         instance: #发现这个IP
-                           prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+ribbon:
+  eureka:
+    enabled: true
