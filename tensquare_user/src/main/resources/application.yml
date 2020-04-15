@@ -1,0 +1,27 @@
+server:
+  port: 9008 #服务访问端口号
+spring:
+  application:
+    name: tensquare_user #指定服务名
+  datasource: #数据库连接四大属性
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.200.128:3306/tensquare_user?characterEncoding=utf-8
+    username: root
+    password: root
+
+
+# Mybatis-Plus 配置
+mybatis-plus:
+  #  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.Tony.user.pojo
+  global-config:
+    id-type: 1  #0:数据库ID自增  ； 1:用户输入id  #因为使用雪花算法
+    db-column-underline: false
+    refresh-mapper: true
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: true #配置的缓存的全局开关
+      lazyLoadingEnabled: true #延时加载的开关
+      multipleResultSetsEnabled: true #开启延时加载，否则按需加载属性
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
