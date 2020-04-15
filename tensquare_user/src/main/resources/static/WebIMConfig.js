@@ -47,7 +47,8 @@ var config = {
     /*
      * Application AppKey
      */
-    appkey: "easemob-demo#chatdemoui",
+    // appkey: "easemob-demo#chatdemoui",
+    appkey: "1113200415010501#tensquare",
     /*
      * Application Host
      */

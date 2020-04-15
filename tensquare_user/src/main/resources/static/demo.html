@@ -156,11 +156,11 @@
                 // rek();
                 // alert(myDate + "登陆成功")
             },
-            onClosed: function (message) {
+            onClosed: function (message) {          //连接关闭回调
                 console.log("onclose:" + message);
                 console.log(error);
-            },         //连接关闭回调
-            onTextMessage: function (message) {
+            },
+            onTextMessage: function (message) {     //收到文本消息
                 console.log('onTextMessage: ', message);
                 if (message.ext.conferenceId != undefined) {
                     var truthBeTold = window.confirm((message.from + "邀请您加入会议"));
@@ -173,7 +173,7 @@
                     }
                 }
 
-            },    //收到文本消息
+            },
 
             onEmojiMessage: function (message) {
                 console.log('onEmojiMessage: ', message);
