@@ -85,10 +85,10 @@ public class ArticleService {
         //设置分页参数,使用 Mybatis Plus 提供的Page对象
         Page<Article> pageData = new Page<>(page,size);
 
-        //执行查询,第一个是分页参数，第二个是查询条件:得到结果集
+        //selectPage方法执行查询,第一个是分页参数，第二个是查询条件:得到结果集
          List<Article> list = articleDao.selectPage(pageData,wrapper);
 
-         //将结果集放入pageData
+         //将结果集放入Page对象的实例中返回
          pageData.setRecords(list);
 
         return pageData;

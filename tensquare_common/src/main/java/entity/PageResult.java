@@ -8,7 +8,7 @@ import java.util.List;
  * @GitHub https://github.com/AntonTony
  */
 
-//分页结果集
+//分页查询时返回的分页结果集
 public class PageResult<T> {
 
     private Long total;
