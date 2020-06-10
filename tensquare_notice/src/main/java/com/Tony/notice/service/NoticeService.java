@@ -38,12 +38,10 @@ public class NoticeService {
     public Page<Notice> selectByPage(Integer page, Integer size, Notice notice) {
         //分页参数
         Page<Notice> pageData = new Page<>(page,size);
-//        查询条件
+        //查询条件
         EntityWrapper<Notice> wrapper =new EntityWrapper<>(notice);
-
-//        执行分页查询
+        //执行分页查询
         List<Notice> noticeList = noticeDao.selectPage(pageData, wrapper);
-
         //设置结果集到page对象中
         pageData.setRecords(noticeList);
         return  pageData;
@@ -51,25 +49,40 @@ public class NoticeService {
 
 
     public void save(Notice notice) {
-//        设置初始值
-//        设置状态  0 未读，1 已读
+        //设置初始值
+        //设置状态  0 未读，1 已读
         notice.setState("0");
         notice.setCreatetime(new Date());
-
-//        使用分布式生成器生成ID
+        //使用分布式生成器生成ID
         String id = idWorker.nextId() + "";
         notice.setId(id);
         noticeDao.insert(notice);
 
-//        新的待推送消息入库，新消息提醒
+        //新的待推送消息入库，新消息提醒
         NoticeFresh noticeFresh = new NoticeFresh();
         noticeFresh.setNoticeId(id);
-//        待通知用户ID
+        //待通知用户ID
         noticeFresh.setUserId(notice.getReceiverId());
-         noticeFreshDao.insert(noticeFresh);
+        noticeFreshDao.insert(noticeFresh);
     }
 
     public void updateById(Notice notice) {
         noticeDao.updateById(notice);
+    }
+
+    public Page<NoticeFresh> freshPage(String userId, Integer page, Integer size) {
+        //封装查询条件
+        NoticeFresh noticeFresh = new NoticeFresh();
+        noticeFresh.setUserId(userId);
+
+        //创建分页对象
+        Page<NoticeFresh> pageData = new Page<>(page,size);
+
+        //执行查询
+        List<NoticeFresh> list = noticeFreshDao.selectPage(pageData, new EntityWrapper<>(noticeFresh));
+        //设置查询结果集到分页对象中
+        pageData.setRecords(list);
+        //返回结果
+        return pageData;
     }
 }

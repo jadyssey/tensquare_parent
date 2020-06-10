@@ -1,6 +1,7 @@
 package com.Tony.notice.controller;
 
 import com.Tony.notice.pojo.Notice;
+import com.Tony.notice.pojo.NoticeFresh;
 import com.Tony.notice.service.NoticeService;
 import com.baomidou.mybatisplus.plugins.Page;
 import entity.PageResult;
@@ -88,6 +89,19 @@ public class NoticeController {
 
 
 //    根据用户id查询该用户的待推送消息（新消息）
+//    http://127.0.0.1/notice/fresh/{userId}/{page}/{size}  GET
+    @GetMapping(value = "fresh/{userId}/{page}/{size}")
+    public Result freshPage(@PathVariable String userId,
+                            @PathVariable Integer page,
+                            @PathVariable Integer size){
+        Page<NoticeFresh> pageData = noticeService.freshPage(userId,page,size);
+
+        PageResult<NoticeFresh> pageResult = new PageResult<>(
+                pageData.getTotal(),pageData.getRecords()
+        );
+
+        return new Result(true,StatusCode.OK,"根据ID查询成功",pageResult);
+    }
 
 
 //    删除待推送消息（新消息）
