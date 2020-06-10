@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("com.Tony.notice.dao")
 public class MyBatisPlusConfig {
 
+//  用于分页
     @Bean
     public PaginationInterceptor createPaginationInterceptor() {
         return new PaginationInterceptor();

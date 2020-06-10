@@ -32,7 +32,7 @@ public class Notice implements Serializable {
     private String targetName;//对象名称或简介
     private String targetId;//对象id
     private Date createtime;//创建日期
-    private String type;    //消息类型 sys系统消息  user用户消息
+    private String type;    //消息类型 (sys系统消息  user用户消息)
     private String state;   //消息状态（0 未读，1 已读）
 
     //set get...
