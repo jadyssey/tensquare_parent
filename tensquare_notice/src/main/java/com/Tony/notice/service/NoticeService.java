@@ -68,4 +68,8 @@ public class NoticeService {
         noticeFresh.setUserId(notice.getReceiverId());
          noticeFreshDao.insert(noticeFresh);
     }
+
+    public void updateById(Notice notice) {
+        noticeDao.updateById(notice);
+    }
 }

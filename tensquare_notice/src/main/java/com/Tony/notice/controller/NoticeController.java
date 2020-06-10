@@ -72,7 +72,19 @@ public class NoticeController {
     }
 
 
-//    修改通知
+
+    /**
+     * 修改通知
+     * http://127.0.0.1:9014/notice
+     * PUT
+     * @param notice
+     * @return
+     */
+    @PutMapping
+    public Result udpateById(@RequestBody Notice notice){
+        noticeService.updateById(notice);
+        return new Result(true,StatusCode.OK,"修改消息成功");
+    }
 
 
 //    根据用户id查询该用户的待推送消息（新消息）
