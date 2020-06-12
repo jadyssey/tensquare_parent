@@ -111,9 +111,13 @@ public class NoticeController {
         return new Result(true,StatusCode.OK,"根据ID查询成功",pageResult);
     }
 
-
-//    根据条件删除待推送消息（新消息）
-//    http://127.0.0.1/notice/fresh/{noticeFresh}  DELETE
+    /**
+     * 根据条件删除待推送消息（新消息）
+     * DELETE
+     * http://127.0.0.1/notice/fresh/{noticeFresh}
+     * @param noticeFresh
+     * @return
+     */
     @DeleteMapping("fresh")
     public Result freshDelete(@RequestBody NoticeFresh noticeFresh){
         noticeService.freshDelete(noticeFresh);
