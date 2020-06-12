@@ -85,4 +85,8 @@ public class NoticeService {
         //返回结果
         return pageData;
     }
+
+    public void freshDelete(NoticeFresh noticeFresh) {
+        noticeFreshDao.delete(new EntityWrapper<>(noticeFresh));
+    }
 }

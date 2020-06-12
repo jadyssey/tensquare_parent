@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import entity.PageResult;
 import entity.Result;
 import entity.StatusCode;
+import org.apache.ibatis.annotations.Delete;
 import org.aspectj.weaver.ast.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -88,8 +89,15 @@ public class NoticeController {
     }
 
 
-//    根据用户id查询该用户的待推送消息（新消息）
-//    http://127.0.0.1/notice/fresh/{userId}/{page}/{size}  GET
+    /**
+     * 根据用户id查询该用户的待推送消息（新消息）
+     *  GET
+     *  http://127.0.0.1/notice/fresh/{userId}/{page}/{size}
+     * @param userId
+     * @param page
+     * @param size
+     * @return
+     */
     @GetMapping(value = "fresh/{userId}/{page}/{size}")
     public Result freshPage(@PathVariable String userId,
                             @PathVariable Integer page,
@@ -104,7 +112,13 @@ public class NoticeController {
     }
 
 
-//    删除待推送消息（新消息）
+//    根据条件删除待推送消息（新消息）
+//    http://127.0.0.1/notice/fresh/{noticeFresh}  DELETE
+    @DeleteMapping("fresh")
+    public Result freshDelete(@RequestBody NoticeFresh noticeFresh){
+        noticeService.freshDelete(noticeFresh);
+        return new Result(true,StatusCode.OK,"删除成功");
+    }
 
 //    根据条件分页查询消息通知
 

@@ -75,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="96" column="58" selection-start-line="96" selection-start-column="58" selection-end-line="96" selection-end-column="58" />
+            <state relative-caret-position="384">
+              <caret line="118" column="28" selection-start-line="118" selection-start-column="28" selection-end-line="118" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,12 +87,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+            <state relative-caret-position="416">
+              <caret line="89" column="64" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1846#1847#0" expanded="true" />
                 <element signature="e#1868#1869#0" expanded="true" />
+                <element signature="e#2439#2440#0" expanded="true" />
+                <element signature="e#2482#2483#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -426,7 +428,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591799533082" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591949508299" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Spring-websocket" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -665,7 +667,7 @@
       <workItem from="1590149055201" duration="669000" />
       <workItem from="1591075152900" duration="1930000" />
       <workItem from="1591175345192" duration="19528000" />
-      <workItem from="1591703420563" duration="5083000" />
+      <workItem from="1591703420563" duration="7499000" />
     </task>
     <servers />
   </component>
@@ -687,7 +689,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169855000" />
+    <option name="totallyTimeSpent" value="172271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,7 +704,7 @@
     <frame x="-7" y="-7" width="1485" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48011363" visible="true" weight="0.23966363" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48011363" visible="true" weight="0.23966363" />
       <window_info id="Structure" order="1" sideWeight="0.5354478" side_tool="true" weight="0.21073718" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -726,7 +728,7 @@
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3275862" />
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32841823" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.26407507" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.26407507" />
       <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32841823" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1115,16 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="62" column="83" lean-forward="true" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-support/2.2.0/mybatis-plus-support-2.2.0.jar!/com/baomidou/mybatisplus/mapper/BaseMapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1146,10 +1138,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="62" column="83" lean-forward="true" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="96" column="58" selection-start-line="96" selection-start-column="58" selection-end-line="96" selection-end-column="58" />
+        <state relative-caret-position="384">
+          <caret line="118" column="28" selection-start-line="118" selection-start-column="28" selection-end-line="118" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1158,12 +1160,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+        <state relative-caret-position="416">
+          <caret line="89" column="64" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1846#1847#0" expanded="true" />
             <element signature="e#1868#1869#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
           </folding>
         </state>
       </provider>
