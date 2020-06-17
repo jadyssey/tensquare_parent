@@ -25,5 +25,5 @@ public interface ArticleClient {
      * @return
      */
     @GetMapping("article/{articleId}")
-    public Result findById(@PathVariable("articleId") String articleId); //@PathVariable接收网页传参
+    public Result findById(@PathVariable("articleId") String articleId);
 }

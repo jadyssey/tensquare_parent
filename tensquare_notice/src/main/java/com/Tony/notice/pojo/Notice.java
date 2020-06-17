@@ -17,25 +17,53 @@ public class Notice implements Serializable {
     @TableId(type = IdType.INPUT)
     private String id;
 
+    /**
+     * 接收消息的用户ID
+     */
+    private String receiverId;
 
-    private String receiverId;//接收消息的用户ID
-    private String operatorId;//进行操作的用户ID
-
-
+    /**
+     * 进行操作的用户ID
+     */
+    private String operatorId;
+    /**
+     * 进行操作的用户昵称
+     */
     @TableField(exist = false)
-    private String operatorName;//进行操作的用户昵称
-    private String action;//操作类型（评论，点赞等）
-    private String targetType;//对象类型（评论，点赞等）
+    private String operatorName;
 
+    /**
+     * 操作类型（评论，点赞等）
+     */
+    private String action;
+    /**
+     * 对象类型（评论，点赞等）
+     */
+    private String targetType;
 
-    @TableField(exist = false)//数据库表中该字段不存在注解
-    private String targetName;//对象名称或简介
-    private String targetId;//对象id
-    private Date createtime;//创建日期
-    private String type;    //消息类型 (sys系统消息  user用户消息)
-    private String state;   //消息状态（0 未读，1 已读）
+    /**
+     * 被操作对象名称或简介
+     */
+    @TableField(exist = false)
+    private String targetName;
+    /**
+     * 被操作对象的id，例如文章的id，评论的id
+     */
+    private String targetId;
 
-    //set get...
+    /**
+     * 创建日期
+     */
+    private Date createtime;
+    /**
+     * 消息类型 (sys系统消息  user用户消息)
+     */
+    private String type;
+    /**
+     * 消息状态（0 未读，1 已读）
+     */
+    private String state;
+
 
     public String getId() {
         return id;

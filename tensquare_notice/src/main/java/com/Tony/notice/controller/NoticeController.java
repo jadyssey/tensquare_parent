@@ -39,10 +39,10 @@ public class NoticeController {
     public Result search(@PathVariable Integer page,
                          @PathVariable Integer size,
                          @RequestBody Notice notice){
-//        使用 Mybatis Plus 提供的Page对象
+        //使用 Mybatis Plus 提供的Page对象
         Page<Notice> pageData = noticeService.selectByPage(page,size,notice);
 
-//      使用分页结果集显示查询数据
+        //使用分页结果集显示查询数据
         PageResult<Notice> pageResult = new PageResult<>(pageData.getTotal(),pageData.getRecords());
         return new Result(true,StatusCode.OK,"条件分页查询成功",pageResult);
     }

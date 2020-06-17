@@ -1,5 +1,7 @@
 package com.Tony.notice.service;
 
+import com.Tony.notice.client.ArticleClient;
+import com.Tony.notice.client.UserClient;
 import com.Tony.notice.dao.NoticeDao;
 import com.Tony.notice.dao.NoticeFreshDao;
 import com.Tony.notice.pojo.Notice;
@@ -29,6 +31,16 @@ public class NoticeService {
 
     @Autowired
     private IdWorker idWorker;
+
+    /**
+     * 接口注入完善消息内容
+     */
+    @Autowired
+    private ArticleClient articleClient;
+    @Autowired
+    private UserClient userClient;
+
+
 
 
     public Notice selectById(String noticeId) {
