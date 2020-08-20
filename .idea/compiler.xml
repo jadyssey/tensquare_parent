@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tensquare_eureka" />
+        <module name="tensquare_encrypt" />
         <module name="SSM" />
         <module name="tensquare_article" />
-        <module name="tensquare_common" />
-        <module name="tensquare_encrypt" />
-        <module name="tensquare_eureka" />
-        <module name="tensquare_notice" />
         <module name="tensquare_user" />
+        <module name="tensquare_notice" />
+        <module name="tensquare_common" />
       </profile>
     </annotationProcessing>
   </component>

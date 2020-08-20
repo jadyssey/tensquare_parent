@@ -52,7 +52,6 @@ public class ArticleController {
         PageResult<Article> pageResult = new PageResult<>(
                 pageData.getTotal(), pageData.getRecords()  //总记录数和当前页的数据结果集
         );
-
         return new Result(true, StatusCode.OK, "分页查询成功", pageResult);
     }
 
