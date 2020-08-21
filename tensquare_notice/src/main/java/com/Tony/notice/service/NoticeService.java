@@ -83,6 +83,13 @@ public class NoticeService {
        return notice;
     }
 
+    /**
+     * 条件查询
+     * @param page
+     * @param size
+     * @param notice
+     * @return
+     */
     public Page<Notice> selectByPage(Integer page, Integer size, Notice notice) {
         //分页参数
         Page<Notice> pageData = new Page<>(page,size);

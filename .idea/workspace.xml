@@ -10,23 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bc491c7-f19b-4044-96f4-0f278fa7d22e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/service/ArticleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/controller/ArticleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_common/target/classes/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_common/target/classes/entity/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_eureka/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_eureka/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_eureka/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/client/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/client/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/service/ArticleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/service/ArticleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/client/UserClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/client/UserClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/service/NoticeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/UserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_user/target/classes/com/Tony/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/target/classes/com/Tony/user/controller/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,15 +128,11 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 28 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 28 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-          <item name="tensquare_user" type="c588b436:RestServiceStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="Found 28 services " type="fcff1e1b:RestServiceStructure$RootNode" />
-          <item name="tensquare_notice" type="c588b436:RestServiceStructure$ProjectNode" />
+          <item name="Found 29 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="tensquare_article" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
@@ -309,9 +294,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ArticleApplication" />
         <item itemvalue="Spring Boot.NoticeApplication" />
         <item itemvalue="Spring Boot.UserApplication" />
-        <item itemvalue="Spring Boot.ArticleApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
         <item itemvalue="Spring Boot.EncryptApplication" />
       </list>
@@ -385,7 +370,7 @@
       <workItem from="1596639927968" duration="687000" />
       <workItem from="1597044842580" duration="3482000" />
       <workItem from="1597732924769" duration="16000" />
-      <workItem from="1597916154140" duration="14865000" />
+      <workItem from="1597916154140" duration="19844000" />
     </task>
     <servers />
   </component>
@@ -406,15 +391,6 @@
       <configuration name="EncryptTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -423,58 +399,62 @@
       <screen x="0" y="0" width="1454" height="864" />
     </state>
     <state x="320" y="94" key="#Project_Structure/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596464112528" />
-    <state width="1405" height="272" key="GridCell.Tab.0.bottom" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.0.bottom" timestamp="1597998626722">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.bottom/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.0.bottom/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
-    <state width="1405" height="272" key="GridCell.Tab.0.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.0.center" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.0.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626722" />
+    <state width="1405" height="272" key="GridCell.Tab.0.center" timestamp="1597998626721">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.center/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.0.center/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
-    <state width="1405" height="272" key="GridCell.Tab.0.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.0.left" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.0.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626721" />
+    <state width="1405" height="272" key="GridCell.Tab.0.left" timestamp="1597998626721">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.left/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396080" />
     <state width="1101" height="326" key="GridCell.Tab.0.left/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
-    <state width="1405" height="272" key="GridCell.Tab.0.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.0.right" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.0.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626721" />
+    <state width="1405" height="272" key="GridCell.Tab.0.right" timestamp="1597998626722">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.right/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.0.right/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
-    <state width="1405" height="272" key="GridCell.Tab.0.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.1.bottom" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.0.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626722" />
+    <state width="1405" height="272" key="GridCell.Tab.1.bottom" timestamp="1597998626724">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.bottom/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.1.bottom/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
-    <state width="1405" height="272" key="GridCell.Tab.1.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.1.center" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.1.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626724" />
+    <state width="1405" height="272" key="GridCell.Tab.1.center" timestamp="1597998626722">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.center/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.1.center/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
-    <state width="1405" height="272" key="GridCell.Tab.1.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.1.left" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.1.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626722" />
+    <state width="1405" height="272" key="GridCell.Tab.1.left" timestamp="1597998626722">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.left/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.1.left/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
-    <state width="1405" height="272" key="GridCell.Tab.1.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
-    <state width="1405" height="272" key="GridCell.Tab.1.right" timestamp="1597993377152">
+    <state width="1405" height="272" key="GridCell.Tab.1.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626722" />
+    <state width="1405" height="272" key="GridCell.Tab.1.right" timestamp="1597998626723">
       <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.right/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
     <state width="1101" height="326" key="GridCell.Tab.1.right/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
-    <state width="1405" height="272" key="GridCell.Tab.1.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.1.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597998626723" />
     <state x="126" y="76" key="SettingsEditor" timestamp="1597974853890">
       <screen x="0" y="0" width="1454" height="864" />
     </state>
     <state x="126" y="76" key="SettingsEditor/0.0.1454.864/1920.0.1858.1080@0.0.1454.864" timestamp="1597974853890" />
+    <state x="2512" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1597997841804">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2512" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597997841804" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

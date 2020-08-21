@@ -5,6 +5,7 @@ import com.Tony.article.pojo.Article;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
@@ -23,11 +24,17 @@ public class ArticleService {
 
     @Autowired
     private ArticleDao articleDao;
+    @Autowired
+    private RedisTemplate redisTemplate;//注入Redis
+
+    /**
+     *
+     * @return
+     */
 
     //查询所有文章
     public List<Article> findAll(){
        return articleDao.selectList(null);
-
     }
 
     //根据Id查询文章
@@ -93,4 +100,29 @@ public class ArticleService {
 
         return pageData;
     }
+
+    public Boolean subscribe(String userId, String articleId) {
+        //根据文章ID查询文章作者ID
+        String authorId = articleDao.selectById(articleId).getUserid();
+        //将订阅设置为redis中的集合
+        String userKey = "article_subscribe_"+userId;
+        String authorKey = "article_author_"+authorId;
+
+        //通过isMember(K key, Object o)方法检查给定的元素是否在变量中
+        Boolean flag = redisTemplate.boundSetOps(userKey).isMember(authorId);
+        //userKey和authorKey分别为用户集合和作者集合，存放的authorId和userId为Key，防止重复订阅
+        if(flag){
+            //如何flag为true，已经订阅，则取消
+            redisTemplate.boundSetOps(userKey).remove(authorId);
+            redisTemplate.boundSetOps(authorKey).remove(userId);
+            return false;
+        }else{
+            //如何flag为false，没有订阅，则进行订阅
+            redisTemplate.boundSetOps(userKey).add(authorId);
+            redisTemplate.boundSetOps(authorKey).add(userId);
+            return true;
+        }
+
+    }
+
 }
