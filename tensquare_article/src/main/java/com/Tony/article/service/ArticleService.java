@@ -1,7 +1,9 @@
 package com.Tony.article.service;
 
+import com.Tony.article.client.NoticeClient;
 import com.Tony.article.dao.ArticleDao;
 import com.Tony.article.pojo.Article;
+import com.Tony.article.pojo.Notice;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -26,6 +29,9 @@ public class ArticleService {
     private ArticleDao articleDao;
     @Autowired
     private RedisTemplate redisTemplate;//注入Redis
+    @Autowired
+    private NoticeClient noticeClient;
+
 
     /**
      *
@@ -46,6 +52,7 @@ public class ArticleService {
     //使用雪花算法生成器生成ID
     @Autowired
     private IdWorker idWorker;
+
     //添加文章,不需要返回值
     public void addArticle(Article article){
         //使用分布式Id生成器
@@ -59,6 +66,32 @@ public class ArticleService {
 
         //新增
         articleDao.insert(article);
+
+        /*
+            添加文章时进行消息通知订阅该作者的用户
+         */
+        //TODO 使用jwt获取当前用户的userid，也就是文章作者的id
+        //注解说明：TODO表示需要实现，但目前还未实现的功能.
+        String authorId = "3";
+
+        //获取需要通知的读者
+        String authorKey = "article_author_" + authorId;
+        Set<String> set = redisTemplate.boundSetOps(authorKey).members();
+
+        for(String uid:set){
+            Notice notice = new Notice();
+            notice.setReceiverId(uid);
+            notice.setOperatorId(authorId);
+            notice.setAction("publish");
+            notice.setTargetType("article");
+            notice.setTargetId(id);
+            notice.setCreatetime(new Date());
+            notice.setType("sys");
+            notice.setState("0");
+
+            noticeClient.add(notice);
+        }
+
     }
 
     //根据Id修改文章
