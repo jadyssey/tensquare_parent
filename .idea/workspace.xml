@@ -10,18 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bc491c7-f19b-4044-96f4-0f278fa7d22e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9b32986d-5800-4a5b-8489-53412eb369fe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9b32986d-5800-4a5b-8489-53412eb369fe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/src/main/java/com/Tony/article/controller/ArticleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_article/target/classes/com/Tony/article/controller/ArticleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/controller/NoticeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/controller/NoticeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/pojo/Notice.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/pojo/Notice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_common/src/main/java/entity/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_common/target/classes/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_common/target/classes/entity/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_eureka/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_eureka/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_eureka/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/client/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/client/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/controller/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/src/main/java/com/Tony/notice/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/client/UserClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/client/UserClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/service/NoticeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_notice/target/classes/com/Tony/notice/service/NoticeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/java/com/Tony/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensquare_user/target/classes/com/Tony/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tensquare_user/target/classes/com/Tony/user/controller/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,17 +57,6 @@
         <option value="Interface" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>tensquare_common</find>
-      <find>get</find>
-      <find>webIM</find>
-      <find>添加到黑名单</find>
-      <find>注册</find>
-      <find>7r0YNROBBgP13pivu517OowNQa0vyao99beOuz4pfEh4Q3JzPrpSY3aWscSUaVbU</find>
-      <find>page</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,7 +118,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -151,6 +145,10 @@
           <item name="Found 28 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="tensquare_user" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="Found 28 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="tensquare_notice" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -162,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApplication">
+  <component name="RunManager" selected="Spring Boot.NoticeApplication">
     <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="tensquare_article" />
       <extension name="coverage">
@@ -303,16 +301,16 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.EurekaApplication" />
-      <item itemvalue="Spring Boot.EncryptApplication" />
       <item itemvalue="Spring Boot.NoticeApplication" />
+      <item itemvalue="Spring Boot.EncryptApplication" />
       <item itemvalue="Spring Boot.ArticleApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Tomcat Server.Spring-websocket" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.NoticeApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Spring Boot.ArticleApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
         <item itemvalue="Spring Boot.EncryptApplication" />
@@ -329,6 +327,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -382,7 +385,7 @@
       <workItem from="1596639927968" duration="687000" />
       <workItem from="1597044842580" duration="3482000" />
       <workItem from="1597732924769" duration="16000" />
-      <workItem from="1597916154140" duration="335000" />
+      <workItem from="1597916154140" duration="14865000" />
     </task>
     <servers />
   </component>
@@ -420,38 +423,58 @@
       <screen x="0" y="0" width="1454" height="864" />
     </state>
     <state x="320" y="94" key="#Project_Structure/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596464112528" />
-    <state width="1087" height="224" key="GridCell.Tab.0.bottom" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1405" height="272" key="GridCell.Tab.0.bottom" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.bottom/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.0.center" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.0.bottom/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
+    <state width="1405" height="272" key="GridCell.Tab.0.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.0.center" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.center/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.0.left" timestamp="1596466396080">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.0.center/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
+    <state width="1405" height="272" key="GridCell.Tab.0.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.0.left" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.left/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396080" />
-    <state width="1087" height="224" key="GridCell.Tab.0.right" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.0.left/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
+    <state width="1405" height="272" key="GridCell.Tab.0.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.0.right" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.0.right/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.1.bottom" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.0.right/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559775" />
+    <state width="1405" height="272" key="GridCell.Tab.0.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.1.bottom" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.bottom/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.1.center" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.1.bottom/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
+    <state width="1405" height="272" key="GridCell.Tab.1.bottom/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.1.center" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.center/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.1.left" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.1.center/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
+    <state width="1405" height="272" key="GridCell.Tab.1.center/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.1.left" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.left/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
-    <state width="1087" height="224" key="GridCell.Tab.1.right" timestamp="1596466396081">
-      <screen x="0" y="0" width="1454" height="864" />
+    <state width="1101" height="326" key="GridCell.Tab.1.left/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
+    <state width="1405" height="272" key="GridCell.Tab.1.left/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state width="1405" height="272" key="GridCell.Tab.1.right" timestamp="1597993377152">
+      <screen x="1920" y="0" width="1858" height="1080" />
     </state>
     <state width="1087" height="224" key="GridCell.Tab.1.right/0.0.1454.864/1920.0.1440.870@0.0.1454.864" timestamp="1596466396081" />
+    <state width="1101" height="326" key="GridCell.Tab.1.right/0.0.1470.864/1920.0.1858.1080@0.0.1470.864" timestamp="1597991559776" />
+    <state width="1405" height="272" key="GridCell.Tab.1.right/0.0.1470.864/1920.0.1858.1080@1920.0.1858.1080" timestamp="1597993377152" />
+    <state x="126" y="76" key="SettingsEditor" timestamp="1597974853890">
+      <screen x="0" y="0" width="1454" height="864" />
+    </state>
+    <state x="126" y="76" key="SettingsEditor/0.0.1454.864/1920.0.1858.1080@0.0.1454.864" timestamp="1597974853890" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

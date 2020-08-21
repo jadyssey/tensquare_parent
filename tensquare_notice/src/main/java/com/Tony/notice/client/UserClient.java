@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @version 1.0
  * @GitHub https://github.com/AntonTony
  */
-@FeignClient("tensquare_user")
+@FeignClient(value ="tensquare-user")
 public interface UserClient {
 
     /**
@@ -22,6 +22,6 @@ public interface UserClient {
      * @param userId
      * @return
      */
-    @GetMapping("User/{userId}")
+    @GetMapping("/user/{userId}")
     public Result findById(@PathVariable("userId") String userId);
 }

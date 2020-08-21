@@ -5,10 +5,15 @@ public class Result {
     private Boolean flag;
     private Integer code;
     private String message;
+
+    /**
+     * 利用Object类来接收对象
+     */
     private Object data;
 
-
-    //三个构造方法
+    /**
+     * 三个构造方法
+     */
     public Result() {
     }
 

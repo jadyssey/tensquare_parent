@@ -124,6 +124,6 @@ public class NoticeController {
         return new Result(true,StatusCode.OK,"删除成功");
     }
 
-//    根据条件分页查询消息通知
+
 
 }

@@ -2,7 +2,8 @@ server:
   port: 9008 #服务访问端口号
 spring:
   application:
-    name: tensquare_user #指定服务名
+#    报错Service id not legal hostname的原因是服务名称不能带有下划线，可以使用中划线
+    name: tensquare-user #指定服务名,不要使用下划线
   datasource: #数据库连接四大属性
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.200.128:3306/tensquare_user?characterEncoding=utf-8
@@ -25,3 +26,11 @@ mybatis-plus:
       lazyLoadingEnabled: true #延时加载的开关
       multipleResultSetsEnabled: true #开启延时加载，否则按需加载属性
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance: #发现这个IP
+    prefer-ip-address: true

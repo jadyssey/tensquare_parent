@@ -8,12 +8,15 @@ import com.Tony.notice.pojo.Notice;
 import com.Tony.notice.pojo.NoticeFresh;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
+import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author AntonTony
@@ -41,10 +44,43 @@ public class NoticeService {
     private UserClient userClient;
 
 
+    /**
+     * 根据用户ID和文章ID查询用户昵称和文章标题
+     */
+    private void getNoticeInfo(Notice notice){
+        //    获得用户信息
+        Result userResult = userClient.findById(notice.getOperatorId());
+        HashMap userMap = (HashMap)userResult.getData();
 
+        //遍历HashMap用于调试
+        //for (Object key:userMap.keySet()) {
+        //    System.out.println("key="+key +" ，Value="+userMap.get(key));
+        //}
 
-    public Notice selectById(String noticeId) {
-       return noticeDao.selectById(noticeId);
+        //将得到的用户昵称设置到notice实体类中
+        notice.setOperatorName(userMap.get("nickname").toString());
+
+        //   如果TargetType为文章类型，则通过TargetId去匹配文章Id，以获取文章标题
+        if("article".equals(notice.getTargetType())){
+            Result articleResult = articleClient.findById(notice.getTargetId());
+            HashMap articleMap = (HashMap)articleResult.getData();
+            notice.setTargetName(articleMap.get("title").toString());
+        }
+    }
+
+    //普通查询
+    //public Notice selectById(String noticeId) {
+    //   return noticeDao.selectById(noticeId);
+    //}
+    /**
+     * 根据ID查询实体，能将用户ID和文章ID转换成可阅读的用户昵称和文章标题
+     * @param id
+     * @return
+     */
+    public Notice selectById(String id) {
+        Notice notice = noticeDao.selectById(id);
+        getNoticeInfo(notice);
+       return notice;
     }
 
     public Page<Notice> selectByPage(Integer page, Integer size, Notice notice) {
@@ -54,6 +90,13 @@ public class NoticeService {
         EntityWrapper<Notice> wrapper =new EntityWrapper<>(notice);
         //执行分页查询
         List<Notice> noticeList = noticeDao.selectPage(pageData, wrapper);
+
+        //用户ID和文章ID转换为可阅读的用户昵称和文章标题
+        for (Notice n:
+                noticeList) {
+            getNoticeInfo(n);
+        }
+
         //设置结果集到page对象中
         pageData.setRecords(noticeList);
         return  pageData;
@@ -101,4 +144,7 @@ public class NoticeService {
     public void freshDelete(NoticeFresh noticeFresh) {
         noticeFreshDao.delete(new EntityWrapper<>(noticeFresh));
     }
+
+
+
 }
