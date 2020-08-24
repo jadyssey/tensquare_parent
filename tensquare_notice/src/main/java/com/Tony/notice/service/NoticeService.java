@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import util.IdWorker;
 
 import java.util.Date;
@@ -109,7 +110,20 @@ public class NoticeService {
         return  pageData;
     }
 
+    //新通知由RabbitMQ发送
+    @Transactional
+    public void save(Notice notice){
+        //初始化数据
+        //设置初始值
+        //设置状态  0 未读，1 已读
+        notice.setCreatetime(new Date());
+        notice.setState("0");
 
+        //通知消息入库
+        notice.setId(idWorker.nextId()+"");
+        noticeDao.insert(notice);
+    }
+    /* 未配置RabbitMq的旧方法
     public void save(Notice notice) {
         //设置初始值
         //设置状态  0 未读，1 已读
@@ -127,6 +141,7 @@ public class NoticeService {
         noticeFresh.setUserId(notice.getReceiverId());
         noticeFreshDao.insert(noticeFresh);
     }
+    */
 
     public void updateById(Notice notice) {
         noticeDao.updateById(notice);

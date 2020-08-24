@@ -6,15 +6,22 @@ import com.Tony.article.pojo.Article;
 import com.Tony.article.pojo.Notice;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import util.IdWorker;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import util.IdWorker;
+
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.core.Queue;
 
 /**
  * @author AntonTony
@@ -29,6 +36,8 @@ public class ArticleService {
     private ArticleDao articleDao;
     @Autowired
     private RedisTemplate redisTemplate;//注入Redis
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
     @Autowired
     private NoticeClient noticeClient;
 
@@ -91,6 +100,8 @@ public class ArticleService {
 
             noticeClient.add(notice);
         }
+        //入库成功后，发送mq消息，内容是消息通知id
+        rabbitTemplate.convertAndSend("article_subscribe", authorId, id);
 
     }
 
@@ -134,7 +145,62 @@ public class ArticleService {
         return pageData;
     }
 
+    /**
+     * 定义Rabbitmq的direct类型的交换机
+     * 定义用户的Rabbitmq队列
+     * 将队列通过路由键绑定或解绑direct交换机
+     * @param userId
+     * @param articleId
+     * @return
+     */
     public Boolean subscribe(String userId, String articleId) {
+        //根据文章ID查询文章作者ID
+        String authorId = articleDao.selectById(articleId).getUserid();
+
+        //创建Rabbit管理器
+        RabbitAdmin rabbitAdmin = new RabbitAdmin(rabbitTemplate.getConnectionFactory());
+
+        //声明exchange
+        DirectExchange exchange = new DirectExchange("article_subscribe");
+        rabbitAdmin.declareExchange(exchange);
+
+        //创建queue：import org.springframework.amqp.core.Queue;
+        Queue queue = new Queue("article_subscribe_"+userId,true);
+
+        //声明exchange和queue的绑定关系，设置路由键为作者Id
+        Binding binding = BindingBuilder.bind(queue).to(exchange).with(authorId);
+
+        //存放用户订阅作者
+        String userKey = "article_subscribe_"+userId;
+        //存放作者的订阅者
+        String authorKey = "article_author_"+authorId;
+
+        //通过isMember(K key, Object o)方法检查给定的元素是否在变量中
+        Boolean flag = redisTemplate.boundSetOps(userKey).isMember(authorId);
+        //userKey和authorKey分别为用户集合和作者集合，存放的authorId和userId为Key，防止重复订阅
+        if(flag){
+            //如何flag为true，已经订阅，则取消
+            redisTemplate.boundSetOps(userKey).remove(authorId);
+            redisTemplate.boundSetOps(authorKey).remove(userId);
+
+            //删除绑定的队列
+            rabbitAdmin.removeBinding(binding);
+            return false;
+        }else{
+            //如何flag为false，没有订阅，则进行订阅
+            redisTemplate.boundSetOps(userKey).add(authorId);
+            redisTemplate.boundSetOps(authorKey).add(userId);
+
+            //声明队列和绑定队列
+            rabbitAdmin.declareQueue(queue);
+            rabbitAdmin.declareBinding(binding);
+
+            return true;
+        }
+
+    }
+//    未配置RabbitMq前的方法
+/*    public Boolean subscribe(String userId, String articleId) {
         //根据文章ID查询文章作者ID
         String authorId = articleDao.selectById(articleId).getUserid();
         //将订阅设置为redis中的集合
@@ -156,7 +222,7 @@ public class ArticleService {
             return true;
         }
 
-    }
+    }*/
 
     public void thumbup(String articleId,String userid) {
         Article article = articleDao.selectById(articleId);
