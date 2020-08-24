@@ -158,9 +158,23 @@ public class ArticleService {
 
     }
 
-    public void thumbup(String articleId) {
+    public void thumbup(String articleId,String userid) {
         Article article = articleDao.selectById(articleId);
         article.setThumbup(article.getThumbup()+1);
         articleDao.updateById(article);
+
+        //实现点赞消息通知
+        Notice notice = new Notice(
+                //利用构造函数简化传参代码
+                article.getUserid(),
+                userid,
+                "thumup",
+                "article",
+                articleId,new Date(),
+                "user",
+                "0"
+        );
+
+        noticeClient.add(notice);
     }
 }

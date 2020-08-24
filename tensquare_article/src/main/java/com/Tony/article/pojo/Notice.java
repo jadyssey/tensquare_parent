@@ -66,7 +66,24 @@ public class Notice implements Serializable {
      */
     private String state;
 
+    //构造函数
+    public Notice() {
+    }
 
+    public Notice(String receiverId, String operatorId,
+                  String action, String targetType, String targetId,
+                  Date createtime, String type, String state) {
+        this.receiverId = receiverId;
+        this.operatorId = operatorId;
+        this.action = action;
+        this.targetType = targetType;
+        this.targetId = targetId;
+        this.createtime = createtime;
+        this.type = type;
+        this.state = state;
+    }
+
+    //geter seter
     public String getId() {
         return id;
     }

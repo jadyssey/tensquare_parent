@@ -164,8 +164,8 @@ public class ArticleController {
      */
     @PutMapping("thumbup/{articleId}")
     public Result thumbup(@PathVariable String articleId){
-        //模拟用户ID
-        String userId = "3";
+        // TODO 模拟用户ID：此处应该获取当前用户ID
+        String userId = "2";
         String key = "thumbup_article" + userId + "_" +articleId;
 
         //查询用户点赞信息 根据用户ID和文章ID
@@ -174,7 +174,7 @@ public class ArticleController {
         //判断查询到的结果是否为空
         if(flag==null){
             //如果为空，表示用户没有点过赞，则可以点
-            articleService.thumbup(articleId);
+            articleService.thumbup(articleId,userId);
 
             //点赞成功，保存点赞信息
             redisTemplate.opsForValue().set(key,1);
