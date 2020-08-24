@@ -158,4 +158,9 @@ public class ArticleService {
 
     }
 
+    public void thumbup(String articleId) {
+        Article article = articleDao.selectById(articleId);
+        article.setThumbup(article.getThumbup()+1);
+        articleDao.updateById(article);
+    }
 }

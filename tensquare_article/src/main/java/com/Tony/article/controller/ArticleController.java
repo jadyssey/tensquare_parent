@@ -8,6 +8,7 @@ import entity.Result;
 import entity.StatusCode;
 import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +29,9 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;//注入Redis
 
     /**
      * 测试统一异常处理,造一个异常
@@ -151,6 +155,34 @@ public class ArticleController {
         }else{
             return new Result(true,StatusCode.OK,"订阅取消");
         }
+    }
+
+    /**
+     * 实现文章点赞功能，判断是否重复点赞
+     * @param articleId
+     * @return
+     */
+    @PutMapping("thumbup/{articleId}")
+    public Result thumbup(@PathVariable String articleId){
+        //模拟用户ID
+        String userId = "3";
+        String key = "thumbup_article" + userId + "_" +articleId;
+
+        //查询用户点赞信息 根据用户ID和文章ID
+        Object flag = redisTemplate.opsForValue().get(key);
+
+        //判断查询到的结果是否为空
+        if(flag==null){
+            //如果为空，表示用户没有点过赞，则可以点
+            articleService.thumbup(articleId);
+
+            //点赞成功，保存点赞信息
+            redisTemplate.opsForValue().set(key,1);
+
+            return new Result(true,StatusCode.OK,"点赞成功");
+        }
+        //如果不为空，表示用户点过账，不可以重复点赞
+        return new Result(false,StatusCode.REPERROR,"您已点过赞了");
     }
 
 
