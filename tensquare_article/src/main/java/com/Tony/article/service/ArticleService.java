@@ -146,6 +146,7 @@ public class ArticleService {
     }
 
     /**
+     * 功能：根据文章ID，订阅文章作者
      * 定义Rabbitmq的direct类型的交换机
      * 定义用户的Rabbitmq队列
      * 将队列通过路由键绑定或解绑direct交换机
@@ -165,9 +166,14 @@ public class ArticleService {
         rabbitAdmin.declareExchange(exchange);
 
         //创建queue：import org.springframework.amqp.core.Queue;
+        //一个用户一个队列，存放消息通知，防止消息错发； true为持久化存储
         Queue queue = new Queue("article_subscribe_"+userId,true);
 
-        //声明exchange和queue的绑定关系，设置路由键为作者Id
+        /*
+        声明exchange和queue的绑定关系，需要确保队列只收到对应作者的新增文章信息
+        设置路由键为作者Id进行绑定，队列只收到绑定作者的文章信息
+        第一个是队列，第二个是交换机，第三个是路由键作者Id
+        */
         Binding binding = BindingBuilder.bind(queue).to(exchange).with(authorId);
 
         //存放用户订阅作者
