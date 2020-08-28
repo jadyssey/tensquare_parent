@@ -123,7 +123,7 @@ public class NoticeService {
         notice.setId(idWorker.nextId()+"");
         noticeDao.insert(notice);
     }
-    /* 未配置RabbitMq的旧方法
+    /* 未配置RabbitMq的旧方法，需要将待推送消息存到数据库
     public void save(Notice notice) {
         //设置初始值
         //设置状态  0 未读，1 已读

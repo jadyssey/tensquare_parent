@@ -81,28 +81,30 @@ public class ArticleService {
          */
         //TODO 使用jwt获取当前用户的userid，也就是文章作者的id
         //注解说明：TODO表示需要实现，但目前还未实现的功能.
-        String authorId = "3";
+        String authorId = article.getUserid();                ;
+        //System.out.println("发布文章的作者为："+authorId);
 
         //获取需要通知的读者
         String authorKey = "article_author_" + authorId;
         Set<String> set = redisTemplate.boundSetOps(authorKey).members();
 
         for(String uid:set){
-            Notice notice = new Notice();
-            notice.setReceiverId(uid);
-            notice.setOperatorId(authorId);
-            notice.setAction("publish");
-            notice.setTargetType("article");
-            notice.setTargetId(id);
-            notice.setCreatetime(new Date());
-            notice.setType("sys");
-            notice.setState("0");
-
+            Notice notice = new Notice(
+                    uid,
+                    authorId,
+                    "publish",
+                    "article",
+                    id,
+                    new Date(),
+                    "sys",
+                    "0"
+            );
             noticeClient.add(notice);
         }
-        //入库成功后，发送mq消息，内容是消息通知id
-        rabbitTemplate.convertAndSend("article_subscribe", authorId, id);
 
+        //新文章入库成功后，发送RabitMq消息，内容是消息通知id
+        //第一个参数是交换机名称，第二个为路由键，第三个是消息内容，此处作为新消息提醒功能
+        rabbitTemplate.convertAndSend("article_subscribe", authorId, id);
     }
 
     //根据Id修改文章
@@ -242,7 +244,8 @@ public class ArticleService {
                 userid,
                 "thumup",
                 "article",
-                articleId,new Date(),
+                articleId,
+                new Date(),
                 "user",
                 "0"
         );
